@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DJImageView">
+        <!-- 原始图片scaleType -->
+        <attr name="DJScaleType">
+            <enum name="fitXY" value="0" />
+            <enum name="fitStart" value="1" />
+            <enum name="fitCenter" value="2" />
+            <enum name="fitEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="centerCrop" value="5" />
+            <enum name="centerInside" value="6" />
+        </attr>
+        <!-- 占位图片 -->
+        <attr name="DJPlaceholder" format="reference" />
+        <!-- 占位图片scaleType -->
+        <attr name="DJPlaceholderScaleType">
+            <enum name="fitXY" value="0" />
+            <enum name="fitStart" value="1" />
+            <enum name="fitCenter" value="2" />
+            <enum name="fitEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="centerCrop" value="5" />
+            <enum name="centerInside" value="6" />
+        </attr>
+        <!-- 固定比例 -->
+        <attr name="DJRatio" format="float" />
+        <!-- 是否显示为圆形 -->
+        <attr name="DJAsCircle" format="boolean" />
+        <!-- 是否显示为圆角矩形 -->
+        <attr name="DJAsRoundRect" format="boolean" />
+        <!-- 圆角矩形圆角半径 -->
+        <attr name="DJRoundRectRadius" format="dimension" />
+        <!-- 圆形或者圆角矩形边框颜色 -->
+        <attr name="DJBorderColor" format="color" />
+        <!-- 圆形或者圆角矩形边框宽度 -->
+        <attr name="DJBorderWidth" format="dimension" />
+        <!-- resize宽度。详见DJImageView中定义。 -->
+        <attr name="DJResizeWidth" format="dimension" />
+        <!-- resize高度。详见DJImageView中定义。 -->
+        <attr name="DJResizeHeight" format="dimension" />
+        <!-- 图片效果 -->
+        <attr name="DJProcessor">
+            <enum name="none" value="0" />
+            <enum name="blue" value="1" />
+            <enum name="shadow" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
