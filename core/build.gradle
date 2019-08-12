@@ -21,21 +21,29 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
+
 
 }
 
 publish {
-    userOrg = 'novoda'
-    groupId = 'com.novoda'
-    artifactId = 'bintray-release'
+    userOrg = 'dujun'
+    repoName = 'core'
+    groupId = 'com.dujun.lib'
+    artifactId = 'com.dujun.lib'
     publishVersion = '1.0.0'
     desc = 'Oh hi, this is a nice description for a project, right?'
-    website = 'https://github.com/novoda/bintray-release'
+    website = 'https://github.com/dujunandroid/DJLib'
 }
 
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     api 'com.facebook.fresco:fresco:2.0.0'
     implementation 'com.facebook.fresco:animated-gif:2.0.0'
