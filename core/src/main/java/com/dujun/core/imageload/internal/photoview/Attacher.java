@@ -1,4 +1,4 @@
-package com.dujun.core.internal.photoview;
+package com.dujun.core.imageload.internal.photoview;
 
 import android.content.Context;
 import android.graphics.Matrix;
@@ -14,7 +14,6 @@ import android.widget.OverScroller;
 
 import androidx.annotation.Nullable;
 import androidx.core.view.GestureDetectorCompat;
-import androidx.core.widget.ScrollerCompat;
 
 import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;

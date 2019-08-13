@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.dujun.core.DJImage;
-import com.dujun.core.DJImageView;
-import com.dujun.core.DJPhotoView;
+import com.dujun.core.imageload.DJImage;
+import com.dujun.core.imageload.DJImageView;
+import com.dujun.core.imageload.DJPhotoView;
 
 public class MainActivity extends AppCompatActivity {
 

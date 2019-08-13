@@ -1,4 +1,4 @@
-package com.dujun.core;
+package com.dujun.core.imageload;
 
 /**
  * Created by dujun on 16/8/23.

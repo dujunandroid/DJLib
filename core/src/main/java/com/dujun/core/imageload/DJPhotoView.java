@@ -1,4 +1,4 @@
-package com.dujun.core;
+package com.dujun.core.imageload;
 
 import android.content.Context;
 import android.graphics.drawable.Animatable;
@@ -10,9 +10,9 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.dujun.core.internal.photoview.PhotoDraweeView;
-import com.dujun.core.internal.processor.BlurPostprocessor;
-import com.dujun.core.internal.processor.ShadowPostprocessor;
+import com.dujun.core.imageload.internal.photoview.PhotoDraweeView;
+import com.dujun.core.imageload.internal.processor.BlurPostprocessor;
+import com.dujun.core.imageload.internal.processor.ShadowPostprocessor;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilder;
 import com.facebook.drawee.controller.BaseControllerListener;
@@ -119,7 +119,7 @@ public class DJPhotoView extends PhotoDraweeView {
 
     public void setOnPhotoTapListener(final OnPhotoTapListener onPhotoTapListener) {
         this.onPhotoTapListener = onPhotoTapListener;
-        super.setOnPhotoTapListener(new com.dujun.core.internal.photoview.OnPhotoTapListener() {
+        super.setOnPhotoTapListener(new com.dujun.core.imageload.internal.photoview.OnPhotoTapListener() {
             @Override
             public void onPhotoTap(View view, float x, float y) {
                 if (DJPhotoView.this.onPhotoTapListener != null) {
@@ -157,7 +157,7 @@ public class DJPhotoView extends PhotoDraweeView {
     }
 
     @Override
-    public void setOnPhotoTapListener(com.dujun.core.internal.photoview.OnPhotoTapListener listener) {
+    public void setOnPhotoTapListener(com.dujun.core.imageload.internal.photoview.OnPhotoTapListener listener) {
         throw new RuntimeException("请勿调用此方法");
     }
 

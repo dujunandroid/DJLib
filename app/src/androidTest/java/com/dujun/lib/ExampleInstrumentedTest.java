@@ -5,8 +5,17 @@ import android.content.Context;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.dujun.core.retrofit.RetrofitUtil;
+import com.dujun.lib.bean.BaseResult;
+import com.dujun.lib.bean.ConfigInfo;
+import com.dujun.lib.service.ApiService;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 import static org.junit.Assert.*;
 
@@ -23,5 +32,30 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("com.dujun.lib", appContext.getPackageName());
+    }
+
+    @Test
+    public void testRetrofit() {
+//        final Context context = InstrumentationRegistry.getTargetContext();
+        RetrofitUtil.init("http://test-micro.feishiapp.com/");
+
+        RetrofitUtil.getService(ApiService.class).appStart()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<BaseResult<ConfigInfo>>() {
+                    @Override
+                    public void onCompleted() {
+                        assertTrue(true);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        fail();
+                    }
+
+                    @Override
+                    public void onNext(BaseResult<ConfigInfo> configInfoBaseResult) {
+                    }
+                });
     }
 }

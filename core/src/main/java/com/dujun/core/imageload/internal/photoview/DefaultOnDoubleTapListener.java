@@ -1,4 +1,4 @@
-package com.dujun.core.internal.photoview;
+package com.dujun.core.imageload.internal.photoview;
 
 import android.graphics.RectF;
 import android.view.GestureDetector;

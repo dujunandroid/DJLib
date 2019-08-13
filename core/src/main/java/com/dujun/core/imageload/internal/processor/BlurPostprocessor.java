@@ -1,4 +1,4 @@
-package com.dujun.core.internal.processor;
+package com.dujun.core.imageload.internal.processor;
 
 /**
  * Copyright (C) 2015 Wasabeef

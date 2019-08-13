@@ -1,4 +1,4 @@
-package com.dujun.core;
+package com.dujun.core.imageload;
 
 import android.content.Context;
 

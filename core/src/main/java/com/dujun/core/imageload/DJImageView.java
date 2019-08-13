@@ -1,4 +1,4 @@
-package com.dujun.core;
+package com.dujun.core.imageload;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,8 +8,9 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.dujun.core.internal.processor.BlurPostprocessor;
-import com.dujun.core.internal.processor.ShadowPostprocessor;
+import com.dujun.core.R;
+import com.dujun.core.imageload.internal.processor.BlurPostprocessor;
+import com.dujun.core.imageload.internal.processor.ShadowPostprocessor;
 import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.backends.pipeline.PipelineDraweeControllerBuilder;

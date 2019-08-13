@@ -1,4 +1,4 @@
-package com.dujun.core;
+package com.dujun.core.imageload;
 
 /**
  * Uri拦截器。有些云平台支持url添加参数,请求不同质量图片。

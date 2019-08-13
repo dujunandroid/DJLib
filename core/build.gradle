@@ -32,7 +32,7 @@ publish {
     userOrg = 'dujun'
     repoName = 'core'
     groupId = 'com.dujun.lib'
-    artifactId = 'com.dujun.lib'
+    artifactId = 'core'
     publishVersion = '1.0.0'
     desc = 'Oh hi, this is a nice description for a project, right?'
     website = 'https://github.com/dujunandroid/DJLib'
@@ -46,14 +46,18 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     api 'com.facebook.fresco:fresco:2.0.0'
-    implementation 'com.facebook.fresco:animated-gif:2.0.0'
-    implementation 'com.facebook.fresco:animated-webp:2.0.0'
-    implementation 'com.facebook.fresco:webpsupport:2.0.0'
+    api 'com.facebook.fresco:animated-gif:2.0.0'
+    api 'com.facebook.fresco:animated-webp:2.0.0'
+    api 'com.facebook.fresco:webpsupport:2.0.0'
     // your project's other dependencies
-    implementation "com.facebook.fresco:imagepipeline-okhttp3:2.0.0"
+    api "com.facebook.fresco:imagepipeline-okhttp3:2.0.0"
 
-    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
-    implementation 'com.squareup.okhttp3:okhttp:4.0.1'
-    implementation 'com.squareup.okio:okio:2.3.0'
+    api 'com.squareup.retrofit2:retrofit:2.6.1'
+    api 'com.squareup.okhttp3:okhttp:4.0.1'
+    api 'com.squareup.okio:okio:2.3.0'
 
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    api 'io.reactivex:rxandroid:1.2.1'
+    api 'io.reactivex:rxjava:1.2.1'
 }

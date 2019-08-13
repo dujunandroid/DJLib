@@ -1,4 +1,4 @@
-package com.dujun.core.internal.photoview;
+package com.dujun.core.imageload.internal.photoview;
 
 /**
  * Interface definition for callback to be invoked when attached ImageView scale changes

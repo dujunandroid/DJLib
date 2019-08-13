@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.dujun.core.DJImageView
+    <com.dujun.core.imageload.DJImageView
         android:id="@+id/iv_test"
         android:layout_width="100dp"
         android:background="@mipmap/ic_launcher"
@@ -16,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.dujun.core.DJPhotoView
+    <com.dujun.core.imageload.DJPhotoView
         android:id="@+id/pv_test"
         android:layout_width="match_parent"
         android:layout_height="0dp"

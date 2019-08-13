@@ -1,4 +1,4 @@
-package com.dujun.core.internal.processor;
+package com.dujun.core.imageload.internal.processor;
 
 import android.annotation.TargetApi;
 import android.content.Context;
