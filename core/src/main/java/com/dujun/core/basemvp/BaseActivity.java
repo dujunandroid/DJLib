@@ -1,15 +1,15 @@
 package com.dujun.core.basemvp;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * @author dujun
  * Created on 2019-09-02
  */
-public abstract class BaseActivity<P extends BasePresenter<IBaseView>> extends AppCompatActivity implements IBaseView {
+public abstract class BaseActivity<P extends BasePresenter<IBaseView>> extends Activity implements IBaseView {
     protected P mPresenter;
 
     @Override

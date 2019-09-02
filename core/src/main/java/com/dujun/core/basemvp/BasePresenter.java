@@ -5,6 +5,8 @@ import android.content.Context;
 
 import androidx.fragment.app.Fragment;
 
+import com.dujun.core.application.DJApplication;
+
 /**
  * @author dujun
  * Created on 2019-09-02
@@ -30,7 +32,7 @@ public class BasePresenter<V extends IBaseView> {
         } else if (mView instanceof Fragment) {
             return ((Fragment) mView).getContext();
         } else {
-            return null;
+            return DJApplication.getContext();
         }
     }
 

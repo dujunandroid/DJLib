@@ -1,17 +1,22 @@
 package com.dujun.lib;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
-import com.dujun.core.basemvp.BaseActivity;
+import androidx.annotation.Nullable;
+
+import com.dujun.common.activity.BaseTitleActivity;
 import com.dujun.core.basemvp.BasePresenter;
 import com.dujun.core.imageload.DJImage;
 import com.dujun.core.imageload.DJImageView;
 import com.dujun.core.imageload.DJPhotoView;
 
-public class MainActivity extends BaseActivity {
+/**
+ * @author dujun
+ * Created on 2019-09-02
+ */
+public class MainActivity extends BaseTitleActivity {
 
     private DJImageView test;
     private DJPhotoView photoView;
@@ -23,15 +28,23 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void initBaseView(Bundle bundle) {
-        test = findViewById(R.id.iv_test);
-        photoView = findViewById(R.id.pv_test);
-        loadImage();
+    protected int getLayoutId() {
+        return R.layout.activity_main;
     }
 
     @Override
-    protected int getBaseLayoutId() {
-        return R.layout.activity_main;
+    protected void initView(Bundle bundle) {
+        hideToolbar();
+        test = findViewById(R.id.iv_test);
+        photoView = findViewById(R.id.pv_test);
+        loadImage();
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView imageView = null;
+                imageView.setImageResource(0);
+            }
+        });
     }
 
     private void loadImage() {

@@ -1,4 +1,4 @@
-package com.dujun.common.base;
+package com.dujun.common.activity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,6 +24,13 @@ public abstract class BaseTitleActivity extends BaseActivity {
         view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         rootView.addView(view);
         toolbar = findViewById(R.id.toolbar);
+        toolbar.leftClick(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        initView(bundle);
     }
 
     @Override
@@ -43,7 +50,17 @@ public abstract class BaseTitleActivity extends BaseActivity {
         return toolbar;
     }
 
+    /**
+     * 设置布局
+     *
+     * @return
+     */
     protected abstract int getLayoutId();
 
-    protected abstract void initView();
+    /**
+     * 初始化页面
+     *
+     * @param bundle
+     */
+    protected abstract void initView(Bundle bundle);
 }
