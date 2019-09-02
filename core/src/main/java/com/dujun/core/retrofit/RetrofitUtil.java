@@ -43,7 +43,7 @@ public final class RetrofitUtil {
 
     public static <T> T getService(Class<T> tClass) {
         checkObjectIsNotNull();
-        if (classMap.containsKey(tClass.getSimpleName())) {
+        if (classMap.containsKey(tClass.getSimpleName()) && classMap.get(tClass.getSimpleName()) != null) {
             return (T) classMap.get(tClass.getSimpleName());
         } else {
             T t = retrofit.create(tClass);
