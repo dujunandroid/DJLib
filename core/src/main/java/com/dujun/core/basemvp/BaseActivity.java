@@ -19,8 +19,8 @@ public abstract class BaseActivity<P extends BasePresenter<IBaseView>> extends A
         if (mPresenter != null) {
             mPresenter.attachView(this);
         }
-        setContentView(getLayoutId());
-        initView(savedInstanceState);
+        setContentView(getBaseLayoutId());
+        initBaseView(savedInstanceState);
     }
 
     /**
@@ -36,14 +36,14 @@ public abstract class BaseActivity<P extends BasePresenter<IBaseView>> extends A
      *
      * @param bundle
      */
-    protected abstract void initView(Bundle bundle);
+    protected abstract void initBaseView(Bundle bundle);
 
     /**
      * 布局id
      *
      * @return
      */
-    protected abstract int getLayoutId();
+    protected abstract int getBaseLayoutId();
 
     @Override
     protected void onDestroy() {

@@ -23,14 +23,14 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView(Bundle bundle) {
+    protected void initBaseView(Bundle bundle) {
         test = findViewById(R.id.iv_test);
         photoView = findViewById(R.id.pv_test);
         loadImage();
     }
 
     @Override
-    protected int getLayoutId() {
+    protected int getBaseLayoutId() {
         return R.layout.activity_main;
     }
 
