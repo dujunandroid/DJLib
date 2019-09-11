@@ -1,16 +1,25 @@
 package com.dujun.lib;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
 import com.dujun.common.activity.BaseTitleActivity;
+import com.dujun.common.basebean.BaseResult;
 import com.dujun.core.basemvp.BasePresenter;
 import com.dujun.core.imageload.DJImage;
 import com.dujun.core.imageload.DJImageView;
 import com.dujun.core.imageload.DJPhotoView;
+import com.dujun.core.retrofit.RetrofitUtil;
+import com.dujun.lib.bean.ConfigInfo;
+import com.dujun.lib.http.Api;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author dujun
@@ -45,6 +54,21 @@ public class MainActivity extends BaseTitleActivity {
                 imageView.setImageResource(0);
             }
         });
+
+        httpRequest();
+    }
+
+    private void httpRequest() {
+        RetrofitUtil.init("http://test-micro.feishiapp.com/");
+        Api.get().appStart()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<BaseResult<ConfigInfo>>() {
+                    @Override
+                    public void accept(BaseResult<ConfigInfo> configInfoBaseResult) throws Exception {
+                        Log.v("dujun", "success: " + configInfoBaseResult);
+                    }
+                });
     }
 
     private void loadImage() {

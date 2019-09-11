@@ -3,6 +3,7 @@ package com.dujun.core.imageload;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -197,6 +198,11 @@ public class DJImageView extends SimpleDraweeView {
         return this;
     }
 
+    public DJImageView placeholder(Drawable drawable) {
+        hierarchy.setPlaceholderImage(drawable);
+        return this;
+    }
+
     public DJImageView placeholder(int resId) {
         placeholdId = resId;
         hierarchy.setPlaceholderImage(resId);
@@ -207,6 +213,21 @@ public class DJImageView extends SimpleDraweeView {
         placeholdId = resId;
         placeholdScaleType = scaleType;
         hierarchy.setProgressBarImage(resId, convertToFrescoScaleType(scaleType));
+        return this;
+    }
+
+    public DJImageView error(Drawable drawable) {
+        hierarchy.setFailureImage(drawable);
+        return this;
+    }
+
+    public DJImageView error(int resId) {
+        hierarchy.setFailureImage(resId);
+        return this;
+    }
+
+    public DJImageView error(int resId, ImageView.ScaleType scaleType) {
+        hierarchy.setFailureImage(resId, convertToFrescoScaleType(scaleType));
         return this;
     }
 

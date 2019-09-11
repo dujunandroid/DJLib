@@ -27,4 +27,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     api project(':core')
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47-androidx'
+
+    api 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+
+    //Optional: see how to use the utility.
+    api 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
 }
