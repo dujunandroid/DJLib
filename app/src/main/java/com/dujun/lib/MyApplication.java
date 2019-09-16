@@ -11,8 +11,12 @@ import com.blankj.utilcode.util.PermissionUtils;
 import com.dujun.common.activity.CrashInfoActivity;
 import com.dujun.core.application.DJApplication;
 import com.dujun.core.imageload.DJImage;
+import com.dujun.core.retrofit.RetrofitUtil;
 
 import java.io.File;
+
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
  * @author dujun
@@ -22,8 +26,16 @@ public class MyApplication extends DJApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        initHttpRequest();
         DJImage.initialize(this);
         initCrashHandler();
+    }
+
+    private void initHttpRequest() {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .build();
+        RetrofitUtil.init("http://test-micro.feishiapp.com/", client);
     }
 
     private void initCrashHandler() {

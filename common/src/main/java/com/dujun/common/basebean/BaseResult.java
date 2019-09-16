@@ -8,7 +8,8 @@ import java.util.List;
  */
 public class BaseResult<T> {
     public int code;
-    public String message;
+    public String detail;
+    public String time;
     public T data;
     public List<T> datas;
 }

@@ -13,7 +13,6 @@ import com.dujun.core.basemvp.BasePresenter;
 import com.dujun.core.imageload.DJImage;
 import com.dujun.core.imageload.DJImageView;
 import com.dujun.core.imageload.DJPhotoView;
-import com.dujun.core.retrofit.RetrofitUtil;
 import com.dujun.lib.bean.ConfigInfo;
 import com.dujun.lib.http.Api;
 
@@ -59,16 +58,16 @@ public class MainActivity extends BaseTitleActivity {
     }
 
     private void httpRequest() {
-        RetrofitUtil.init("http://test-micro.feishiapp.com/");
-        Api.get().appStart()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+        addDisposable(Api.get().appStart()
+                .observeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+//                .compose(new CustomTransformer())
                 .subscribe(new Consumer<BaseResult<ConfigInfo>>() {
                     @Override
-                    public void accept(BaseResult<ConfigInfo> configInfoBaseResult) throws Exception {
-                        Log.v("dujun", "success: " + configInfoBaseResult);
+                    public void accept(BaseResult<ConfigInfo> configInfoBaseResult) {
+                        Log.v("dujun", "success: " + configInfoBaseResult.code + ":" + configInfoBaseResult.detail + ":" + configInfoBaseResult.time);
                     }
-                });
+                }));
     }
 
     private void loadImage() {
