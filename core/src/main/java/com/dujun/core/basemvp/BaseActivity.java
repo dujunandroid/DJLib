@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable;
  * @author dujun
  * Created on 2019-09-02
  */
-public abstract class BaseActivity<P extends BasePresenter<IBaseView>> extends Activity implements IBaseView {
+public abstract class BaseActivity<P extends BasePresenter> extends Activity implements IBaseView {
     protected P mPresenter;
 
     private CompositeDisposable compositeDisposable;
