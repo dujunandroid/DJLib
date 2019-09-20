@@ -19,6 +19,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends Activity imp
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        beforeInit();
         compositeDisposable = new CompositeDisposable();
         mPresenter = createPresenter();
         if (mPresenter != null) {
@@ -27,6 +28,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends Activity imp
         setContentView(getBaseLayoutId());
         initBaseView(savedInstanceState);
     }
+
+    protected void beforeInit() {}
 
     public void addDisposable(Disposable disposable) {
         compositeDisposable.add(disposable);

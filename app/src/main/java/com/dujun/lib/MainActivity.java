@@ -54,7 +54,7 @@ public class MainActivity extends BaseTitleActivity {
             }
         });
 
-        httpRequest();
+//        httpRequest();
     }
 
     private void httpRequest() {

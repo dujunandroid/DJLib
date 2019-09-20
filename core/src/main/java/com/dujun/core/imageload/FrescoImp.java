@@ -47,6 +47,7 @@ final class FrescoImp implements ImageImp {
             ImagePipelineConfig config = OkHttpImagePipelineConfigFactory
                     .newBuilder(context, okHttpClient)
                     .setDownsampleEnabled(true)
+                    .setImageDecoder(CustomImageDecoder.getCustomImageDecoder(context))
                     .build();
             initParam = config;
         }
