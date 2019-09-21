@@ -1,9 +1,9 @@
 package com.dujun.core.basemvp;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable;
  * @author dujun
  * Created on 2019-09-02
  */
-public abstract class BaseActivity<P extends BasePresenter> extends Activity implements IBaseView {
+public abstract class BaseActivity<P extends BasePresenter> extends FragmentActivity implements IBaseView {
     protected P mPresenter;
 
     private CompositeDisposable compositeDisposable;
