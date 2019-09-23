@@ -33,7 +33,7 @@ publish {
     repoName = 'core'
     groupId = 'com.dujun.lib'
     artifactId = 'core'
-    publishVersion = '1.0.7'
+    publishVersion = '1.0.8'
     desc = 'Oh hi, this is a nice description for a project, right?'
     website = 'https://github.com/dujunandroid/DJLib'
 }
